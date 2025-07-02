@@ -1,0 +1,101 @@
+---
+layout: default
+title: Inicio
+permalink: /
+---
+
+<section class="hero">
+  <div class="container">
+    <h1>Hola, soy Aarón Docman</h1>
+    <p class="lead">Exploro sobre la computación e informática, el pensamiento estructurado y la creatividad humana. Este es mi jardín digital para aprender compartiendo.</p>
+  </div>
+</section>
+
+<section class="intro">
+  <div class="container">
+    <h2>¿Qué puedes encontrar aquí?</h2>
+    <ul class="highlights">
+      <li><strong>Notas:</strong> Ideas en proceso, reflexiones y conexiones entre temas.</li>
+      <li><strong>Blog:</strong> Publicaciones didácticas orientadas a la divulgación técnica y humana.</li>
+      <li><strong>Ensayos:</strong> Exploraciones profundas, filosóficas o emocionales sobre el aprendizaje y la vida.</li>
+      <li><strong>Proyectos:</strong> Documentación de mis proyectos.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Notas (centro) -->
+<div class="mx-auto grid max-w-none grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 border-t" style="border-color: rgba(255,255,255,0.1);">
+  {% assign notas = site.posts | where: "categories", "nota" %}
+  {% for post in notas %}
+  <article class="flex flex-col items-start">
+    <div class="flex items-center gap-x-4 text-xs opacity-75">
+      <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%b %d, %Y' }}</time>
+      <span class="rounded-full bg-[var(--bg-sidebar)] px-3 py-1 font-medium" style="color: var(--text-color);">{{ post.categories[0] }}</span>
+    </div>
+    <h3 class="mt-3 text-3xl font-semibold hover:underline">
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </h3>
+    <p class="mt-4 text-sm opacity-80">{{ post.excerpt }}</p>
+  </article>
+  {% endfor %}
+</div>
+
+<!-- Ensayos (centro) -->
+<div class="mx-auto grid max-w-none grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 border-t" style="border-color: rgba(255,255,255,0.1);">
+  {% assign ensayos = site.posts | where: "categories", "ensayo" %}
+  {% for post in ensayos %}
+  <article class="flex flex-col items-start">
+    <div class="flex items-center gap-x-4 text-xs opacity-75">
+      <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%b %d, %Y' }}</time>
+      <span class="rounded-full bg-[var(--bg-sidebar)] px-3 py-1 font-medium" style="color: var(--text-color);">{{ post.categories[0] }}</span>
+    </div>
+    <h3 class="mt-3 text-3xl font-semibold hover:underline">
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </h3>
+    <p class="mt-4 text-sm opacity-80">{{ post.excerpt }}</p>
+  </article>
+  {% endfor %}
+</div>
+
+<!-- Entradas (centro) -->
+<div class="mx-auto grid max-w-none grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 border-t" style="border-color: rgba(255,255,255,0.1);">
+  {% assign entradas = site.posts | where: "categories", "entrada" %}
+  {% for post in entradas %}
+  <article class="flex flex-col items-start">
+    <div class="flex items-center gap-x-4 text-xs opacity-75">
+      <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%b %d, %Y' }}</time>
+      <span class="rounded-full bg-[var(--bg-sidebar)] px-3 py-1 font-medium" style="color: var(--text-color);">{{ post.categories[0] }}</span>
+    </div>
+    <h3 class="mt-3 text-3xl font-semibold hover:underline">
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </h3>
+    <p class="mt-4 text-sm opacity-80">{{ post.excerpt }}</p>
+  </article>
+  {% endfor %}
+</div>
+
+<!-- Proyectos (centro) -->
+<div class="mx-auto grid max-w-none grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 border-t" style="border-color: rgba(255,255,255,0.1);">
+  {% assign proyectos = site.posts | where: "categories", "proyecto" %}
+  {% for post in proyectos %}
+  <article class="flex flex-col items-start">
+    <div class="flex items-center gap-x-4 text-xs opacity-75">
+      <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%b %d, %Y' }}</time>
+      <span class="rounded-full bg-[var(--bg-sidebar)] px-3 py-1 font-medium" style="color: var(--text-color);">{{ post.categories[0] }}</span>
+    </div>
+    <h3 class="mt-3 text-3xl font-semibold hover:underline">
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </h3>
+    <p class="mt-4 text-sm opacity-80">{{ post.excerpt }}</p>
+  </article>
+  {% endfor %}
+</div>
+
+
+<section class="call-to-action">
+  <div class="container">
+    <h2>¿Quieres seguir mis pasos?</h2>
+    <p>Únete a mi newsletter para recibir ideas frescas, recursos gratuitos y contenido exclusivo.</p>
+    <a href="{{ '/newsletter/' | relative_url }}" class="btn">Suscribirme</a>
+  </div>
+</section>

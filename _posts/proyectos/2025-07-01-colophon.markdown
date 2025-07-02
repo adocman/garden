@@ -1,0 +1,6 @@
+---
+layout: post
+title:  "Colophon!"
+date:   2025-07-01
+categories: proyecto
+---
